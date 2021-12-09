@@ -1,0 +1,29 @@
+{# templates/etudiant/index.html.twig #}
+{% extends 'base_co.html.twig' %}
+
+{% block title %}
+    Etudiant |
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div id="maDivGauche" style="float:left">
+        <h1 class="text-center">Liste des professionnels :</h1>
+        <h2>Vous êtes : </h2>
+        <p>(cliquez sur votre situation)</p>
+        <br/>
+    </div>
+    <div id="maDivDroite" style="float:right;clear:right;">
+        <h1 class="text-left">Que voulez vous faire ?</h1>
+        <p>Mes demandes en cours</p>
+        <p>Mes rendez-vous</p>
+        <p href="">{{ app.user.email }}</p>
+        <p class="text-center">Inscrit le {{ app.user.createdAt|date('d/m/Y H::i') }}</p>
+        <img src="<{{ app.user.image }}" alt="Photo de {{ app.user.fullname }}" />
+        <br />
+
+        <style>
+            img {border-radius: 10px; }
+        </style>
+    </div>
+{% endblock %}

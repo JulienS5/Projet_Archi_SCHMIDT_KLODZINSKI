@@ -13,20 +13,20 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/etudiant", name="admin")
+     * @Route("/etu_dash", name="admin")
      */
     public function index(): Response
     {
-                $routeBuilder = $this->get(AdminUrlGenerator::class);
-                $url = $routeBuilder->setController(UserCrudController::class)->generateUrl();
+        $routeBuilder1 = $this->get(AdminUrlGenerator::class);
+        $url1 = $routeBuilder1->setController(DemandeCrudController::class)->generateUrl();
 
-                return $this->redirect($url);
+        return $this->redirect($url1);
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Votre Espace');
+            ->setTitle('Bienvenue sur votre interface !');
     }
 
     public function configureMenuItems(): iterable
@@ -43,12 +43,7 @@ class DashboardController extends AbstractDashboardController
         $routeBuilder3 = $this->get(AdminUrlGenerator::class);
         $url3 = $routeBuilder3->setController(ReservationCrudController::class)->generateUrl();
 
-        $routeBuilder4 = $this->get(AdminUrlGenerator::class);
-        $url4 = $routeBuilder4->setController(Demande2CrudController::class)->generateUrl();
-
-        yield MenuItem::linktoRoute('Accueil', 'fas fa-home', 'homepage');
         yield MenuItem::linktoUrl('Demande de panne', 'fas fa-car', $url1);
-        yield MenuItem::linktoUrl('Demande de panne2', 'fas fa-car', $url4);
         yield MenuItem::linktoUrl('Professionnels', 'fas fa-users', $url2);
         yield MenuItem::linktoUrl('Liste de rendez-vous', 'fas fa-map-marker-alt', $url3);
 

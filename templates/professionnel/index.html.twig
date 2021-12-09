@@ -1,0 +1,23 @@
+{# templates/dashboard/index.html.twig #}
+{% extends 'base_co.html.twig' %}
+
+{% block title %}
+    Professionnel |
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-center">Hello {{ app.user.fullname }}! </h1>
+    <h2>Vous êtes : </h2>
+    <p>(cliquez sur votre situation)</p>
+    <br/>
+    <p href="">{{ app.user.email }}</p>
+    <p>Inscrit le {{ app.user.createdAt|date('d/m/Y H::i') }}</p>
+    <img src="<{{ app.user.image }}" alt="Photo de {{ app.user.fullname }}" />
+    <br />
+
+    <style>
+        img {border-radius: 10px; }
+    </style>
+{% endblock %}

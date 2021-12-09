@@ -1,0 +1,19 @@
+{# templates/dashboard/index.html.twig #}
+{% extends 'base_co.html.twig' %}
+
+{% block title %}
+    Choix |
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-center">Hello {{ app.user.fullname }}! </h1>
+    <h2>Vous êtes : </h2>
+    <p>(cliquez sur votre situation)</p>
+    <br/>
+    <ul>
+        <li>Etudiant :<a href="/etu_dash"> Cliquez ici !</a></li><br/>
+        <li>Professionnel :<a href="/pro_dash"> Cliquez ici !</a></li><br/>
+    </ul>
+{% endblock %}

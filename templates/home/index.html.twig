@@ -1,0 +1,31 @@
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accueil |
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Bienvenue sur Eco_Mecano</h1>
+                <br/>
+                <h2 class="text-center">POUR QUI ?</h2>
+                <br/>
+                <p class="text-center">Etudiant ? Panne de voiture ? Petit budget ?
+                    <br/>
+                    Mecano ? Envie d'aider la génération de demain ?
+                </p>
+                <br/>
+                <h2 class="text-center">CONNECTE TOI !</h2>
+                <br/>
+                <p class="text-center">Si tu fait partie d'une des deux catégories,
+                <br/>
+                    ce site est fait pour toi !
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
